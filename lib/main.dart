@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/home/categories.dart';
+import 'screens/categories.dart';
+import 'screens/category_meals.dart';
 //import 'widgets/home/home.dart';
 
 void main() => runApp(const MyApp());
@@ -32,7 +33,24 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
             .copyWith(secondary: Colors.amber),
       ),
-      home: const Categories(),
+
+      //home: const Categories(),
+      //initialRoute: '/', //default route is '/'
+      initialRoute: Categories.routedName,
+
+      //named routes
+      routes: {
+        // slash is like home route
+        //hard coded
+        //'/': (ctx) => const Categories(),
+        Categories.routedName: (ctx) => const Categories(),
+
+        //hard coded
+        //'/category-meals': (ctx) => const CategoryMeals(),
+
+        //another way instead of hard coded
+        CategoryMeals.routedName: (ctx) => const CategoryMeals(),
+      },
     );
   }
 }

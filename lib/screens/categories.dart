@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:receitas/models/dummy.dart';
 
-import '/widgets/home/category_item.dart';
+import '../widgets/category_item.dart';
 import '/models/dummy.dart';
 
 class Categories extends StatelessWidget {
+  static const routedName = '/';
+
   const Categories({Key? key}) : super(key: key);
 
   @override
@@ -16,9 +19,10 @@ class Categories extends StatelessWidget {
       ),
       body: GridView(
         padding: const EdgeInsets.all(25),
-        children: dummyCategories
+        children: DUMMY_CATEGORIES
             .map(
               (catData) => CategoryItem(
+                catData.id,
                 catData.title,
                 catData.color,
               ),
