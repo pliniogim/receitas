@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:receitas/screens/meal_detail.dart';
 
 import 'screens/categories.dart';
 import 'screens/category_meals.dart';
+import 'screens/meal_detail.dart';
 //import 'widgets/home/home.dart';
 
 void main() => runApp(const MyApp());
@@ -50,6 +52,19 @@ class MyApp extends StatelessWidget {
 
         //another way instead of hard coded
         CategoryMeals.routedName: (ctx) => const CategoryMeals(),
+
+        MealDetail.routedName: (ctx) => const MealDetail(),
+      },
+
+      //default route when route was not registered and you try to push to it (like 'commented' MealDetail)
+      // onGenerateRoute: (settings) {
+      //   print(settings.arguments);
+      //   return MaterialPageRoute(builder: (ctx) => const Categories());
+      // },
+
+      //reached when flutter cannot build a screen with other methods
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (ctx) => const Categories());
       },
     );
   }
