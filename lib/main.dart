@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:receitas/screens/meal_detail.dart';
+import 'package:receitas/screens/tabs.dart';
 
 import 'screens/categories.dart';
 import 'screens/category_meals.dart';
@@ -44,8 +45,8 @@ class MyApp extends StatelessWidget {
       routes: {
         // slash is like home route
         //hard coded
-        //'/': (ctx) => const Categories(),
-        Categories.routedName: (ctx) => const Categories(),
+        '/': (ctx) => const TabsScreen(),
+        //Categories.routedName: (ctx) => const Categories(),
 
         //hard coded
         //'/category-meals': (ctx) => const CategoryMeals(),

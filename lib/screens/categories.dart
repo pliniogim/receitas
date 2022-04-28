@@ -11,14 +11,21 @@ class Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Receitas',
-        ),
-      ),
-      body: GridView(
+    return GridView(
+      // Scaffold(
+      // appBar: AppBar(
+      //   title: const Text(
+      //     'Receitas',
+      //   ),
+      // ),
+      // body:
         padding: const EdgeInsets.all(25),
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+        ),
         children: DUMMY_CATEGORIES
             .map(
               (catData) => CategoryItem(
@@ -28,13 +35,6 @@ class Categories extends StatelessWidget {
               ),
             )
             .toList(),
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-        ),
-      ),
-    );
+      );
   }
 }
